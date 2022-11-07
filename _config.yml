@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 火贪
+title: 放下我执
 subtitle: '海上月是天上月'
 description: '一念疏忽试错起头，一念决裂是错到底'
 keywords:
@@ -47,14 +47,14 @@ highlight:
   enable: false
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: ""
 prism_plugin:
   mode: 'preprocess' # realtime/preprocess
   theme: 'default'
@@ -110,3 +110,12 @@ deploy:
   repo: https://github.com/jxch/jxch.github.io.git
   branch: main
   token: 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
+
+encrypt: # hexo-blog-encrypt
+  silent: true
+  abstract: 这是一篇加密文章，需要密码才能继续阅读。
+  message: 当前文章暂不对外可见，请输入密码后查看！
+  tags:
+    - {name: private, password: jiang155.}
+  wrong_pass_message: 抱歉，您输入的密码错误，请检查后重新输入。
+  wrong_hash_message: 抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。
