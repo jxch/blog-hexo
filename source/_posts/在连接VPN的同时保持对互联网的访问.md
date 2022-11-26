@@ -18,6 +18,7 @@ tags: 流量转发
 
 ---
 可以使用以下 powershell 脚本，在连接VPN的时候自动更新路由表
+下载脚本：`https://github.com/jxch/Shell-Tools/blob/main/auto-vpn-route.ps1`
 
 ```powershell
 # auto-vpn-route.ps1
