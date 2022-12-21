@@ -18,7 +18,26 @@ services:
       - 12345:12345
     volumes:
       - ./v2fly:/etc/v2ray
-    command:  v2ray run -c /etc/v2ray/config.json
+    entrypoint: ["v2ray", "run",  "-c", "/etc/v2ray/config.json"]
+```
+
+## docker swarm
+```yaml
+version: '3.8'
+services:
+  v2fly:
+    image: v2fly/v2fly-core
+    ports:
+      - 12345:12345
+    configs:
+      - source: v2fly.conf
+        target: /etc/v2ray/config.json
+    entrypoint: ["v2ray", "run",  "-c", "/etc/v2ray/config.json"]
+
+
+configs:
+  v2fly.conf:
+    file: /root/config/v2fly/config.json
 ```
 
 ## config.json
@@ -97,7 +116,7 @@ services:
     network_mode: host
     volumes: 
       - ./v2fly:/etc/v2ray
-    command: v2ray run -c /etc/v2ray/config.json
+    entrypoint: ["v2ray", "run",  "-c", "/etc/v2ray/config.json"]
 ```
 
 ## config.json
